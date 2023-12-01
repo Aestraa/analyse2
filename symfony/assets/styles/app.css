@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: lightgray;
+}
+
+.button-primary {
+    @apply bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-all;
+}
+
+.button-danger {
+    @apply bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-all;
+}
+
+input[type="text"], input[type="password"], textarea {
+    @apply border border-neutral-200 bg-white rounded-md px-2 py-1 hover:outline-blue-500;
+}
+
+table {
+    @apply border border-neutral-200 bg-white rounded-md px-4 py-2 hover:outline-blue-500;
+}
+
+th {
+    @apply border border-neutral-200 bg-white rounded-md px-4 py-2 hover:outline-blue-500;
+}
+
+td {
+    @apply border border-neutral-200 bg-white rounded-md px-4 py-2 hover:outline-blue-500 text-center;
+}
+
+form > div {
+    @apply space-y-4 mb-4;
+}
+
+form div div {
+    @apply flex items-center gap-2;
+}
+
+form div div label {
+    @apply min-w-[100px];
+}
+
+form div div *:not(label) {
+    @apply w-full;
+}
+
+form button {
+    @apply w-full;
+}

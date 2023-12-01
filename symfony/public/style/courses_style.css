@@ -1,0 +1,193 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #fefefe;
+    font-family: 'Oswald', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .section-content{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+    .section-element{
+        width: 100%;
+        margin: 0;
+    }
+    .section-title{
+        width: 100%;
+        font-size: 1.5em;
+    }
+    #triathlon .section-title{
+        background-image: linear-gradient(to right, #98cc4c, #caf885);
+    }
+
+    #aquathlon .section-title, #swimrun .section-title{
+        background-image: linear-gradient(to right, #3c5cfc, #7088ff);
+    }
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;    
+    background-color: #2e2e2e;
+}
+
+.section-content{
+    font-size: 25px;
+    padding: 15px; 
+    align-items: center;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 2%;
+    min-width: 60%;
+    max-width: 90%;
+    width: auto;
+    margin-bottom: 2%;
+}
+
+.section-title{
+   
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 100%;
+}
+
+.section-element{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border-width: 1px;
+    transition: background-image 0.3s ease-in-out;
+    border-style: solid;
+    margin: 10px;
+    top: 0;
+    overflow: hidden;
+}
+/*
+.section-element:hover{
+    background-image: linear-gradient(135deg,rgb(197,40,129), rgb(62,74,217));
+    mix-blend-mode: hard-light;
+}
+*/
+.section-element > *{
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.section-element:hover > *{
+    color: #fefefe !important;
+}
+
+.section-element::before{
+    content: '';
+    background-size: cover;
+    background-position: top center;
+    border-radius: 25px;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out, scale 0.3s ease-in-out;
+    scale: 1;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px; 
+    opacity: 0;
+    z-index: 0;
+}
+
+.section-element:hover::before{
+    opacity: 40%;
+    scale: 1.1;
+    overflow: hidden;
+}
+
+.section-element::after{
+    content: '';
+    background-size: cover;
+    background-position: top center;
+    mix-blend-mode: hard-light;
+    border-radius: 25px;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px; 
+    opacity: 0;
+    z-index: 1;
+}
+
+.section-element:hover::after{
+    opacity: 100%;
+}
+
+#triathlon .section-title{
+    background-image: linear-gradient(to right, #98cc4c, #fefefe);
+}
+
+#aquathlon .section-title{
+    background-image: linear-gradient(to right, #3c5cfc, #fefefe);
+}
+
+#swimrun .section-title{
+    background-image: linear-gradient(to right, #3c5cfc, #fefefe);
+ 
+}
+
+#triathlon .price{
+    color: #a0cc4c;
+}
+
+#triathlon .section-element {
+    border-color: #a0cc4c;
+}
+
+#aquathlon .price{
+    color: #3c5cfc;
+}
+
+#aquathlon .section-element {
+    border-color: #3c5cfc;
+}
+
+#swimrun .price{
+    color: #3c5cfc;
+}
+
+#swimrun .section-element {
+    border-color: #3c5cfc;
+}
+
+/*
+.bg-image{
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.bg-image:hover{
+    opacity: 80%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+*/

@@ -1,0 +1,49 @@
+{% set route = app.request.attributes.get('_route') %}
+
+<aside class="fixed px-2 top-0 left-0 w-[200px] h-screen overflow-y-auto bg-neutral-50 border-r shadow-lg border-neutral-200">
+    <div class="text-center my-4 text-xs uppercase font-light">Administration</div>
+
+    <ul class="mt-4 space-y-2">
+        <li>
+            <a
+                    href="{{ path('app_dashboard_analytics_index') }}"
+                    class="block px-4 py-2 transition-all rounded-md {{ route == "app_dashboard_analytics_index" ? 'bg-blue-500 text-white' : 'hover:bg-neutral-200' }}"
+            >
+                Google Analytics
+            </a>
+        </li>
+        <li>
+            <a
+                href="{{ path('app_dashboard_course_index') }}"
+                class="block px-4 py-2 transition-all rounded-md {{ route == "app_dashboard_course_index" ? 'bg-blue-500 text-white' : 'hover:bg-neutral-200' }}"
+            >
+                Courses
+            </a>
+        </li>
+        <li>
+            <a
+                href="{{ path('app_dashboard_blog_index') }}"
+                class="block px-4 py-2 transition-all rounded-md {{ route == "app_dashboard_blog_index" ? 'bg-blue-500 text-white' : 'hover:bg-neutral-200' }}"
+            >
+                Blog
+            </a>
+        </li>
+        <li>
+            <a
+                href="{{ path('app_register') }}"
+                class="block px-4 py-2 transition-all rounded-md {{ route == "app_register" ? 'bg-blue-500 text-white' : 'hover:bg-neutral-200' }}"
+            >
+                Créer un compte
+            </a>
+        </li>
+        <hr>
+        <li>
+            <a
+                href="/"
+                class="block px-4 py-2 transition-all rounded-md hover:bg-neutral-200"
+            >
+                Retour au site
+            </a>
+        </li>
+    </ul>
+</aside>
